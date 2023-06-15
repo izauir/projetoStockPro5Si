@@ -104,7 +104,7 @@
                 $_SESSION['msg'] = "<div class='alert alert-warning'>Email já esta sendo usando</div>";
                 header('Location:cadastrar_usuario_externo.php');
             }else {
-                $sql = "INSERT INTO `usuarios`(`nome_usuario`, `email_usuario`, `senha_usuario`, `nivel_usuario`, `status`) VALUES ('$nomeusuario','$email',sha1('$senha'), 2,'$status')";
+                $sql = "INSERT INTO `usuarios`(`nome_usuario`, `email_usuario`, `senha_usuario`, `nivel_usuario`, `status`) VALUES ('$nomeusuario','$email',sha1('$senha'), 0,'$status')";
     
                 $inserir = mysqli_query($conexao,$sql);
             
