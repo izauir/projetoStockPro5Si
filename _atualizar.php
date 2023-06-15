@@ -34,7 +34,7 @@
         $quantidade = $_POST['quantidade'];
         $fornecedor = $_POST['fornecedor'];
     
-        echo $sql = "UPDATE `produtos` SET `nomeproduto`='$nomeproduto',`categoria`='$categoria',`quantidade`=$quantidade,`fornecedor`='$fornecedor' WHERE id_produto = $id";
+        echo $sql = "UPDATE `produtos` SET `nomeproduto`='$nomeproduto',`id_categoria`=$categoria,`quantidade`=$quantidade,`id_fornecedor`=$fornecedor WHERE id_produto = $id";
         $atualizar = mysqli_query($conexao,$sql);
     
         $_SESSION['msg'] = "<div class='alert alert-success'>Produto atualizado com sucesso!</div>";

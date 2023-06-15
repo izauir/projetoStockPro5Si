@@ -96,9 +96,9 @@
                                 if (($nivel == 1) || ($nivel == 2)) {
                                 
                             ?>
-                            <a class="dropdown-item" href="cadastrar_categoria.php">Cadastrar Categoria</a>
+                            <a class="dropdown-item" href="cadastrar_vendas.php">Cadastrar Categoria</a>
                             <?php }?>
-                            <a class="dropdown-item" href="listar_categoria.php">Listar Vendas</a>                    
+                            <a class="dropdown-item" href="listar_vendas.php">Listar Vendas</a>                    
                         </div>
                     </li>
 
