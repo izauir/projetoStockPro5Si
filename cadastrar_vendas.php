@@ -2,7 +2,7 @@
     include 'header.php';
 ?>
     <div class="container" id="tamanhoContainer" style="margin-top: 40px;">
-        <h4>Cadastro de Produto</h4>
+        <h4>Cadastro de Venda</h4>
         <?php 
             if (isset($_SESSION['msg'])) {
                 echo $_SESSION['msg'];
@@ -36,9 +36,9 @@
                     $buscar = mysqli_query($conexao, $sql);
                     while ($array = mysqli_fetch_array($buscar)) {
                        $id_produto = $array['id_produto'];
-                       $nroproduto = $array['nroproduto'];
+                       $nomeproduto = $array['nomeproduto'];
                 ?>
-                  <option value="<?php echo$id_produto ?>" ><?php echo $nroproduto ?></option>
+                  <option value="<?php echo$id_produto ?>" ><?php echo $nomeproduto ?></option>
                 <?php } ?>
                 </select>
             </div>

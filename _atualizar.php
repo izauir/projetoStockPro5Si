@@ -41,6 +41,19 @@
         header('Location:listar_produtos.php');
     }
     
+    // Atualizar Venda
+    if (isset($_POST['updatevend'])) {
+        $id = $_POST['id'];
+        $produto = $_POST['produto'];
+        $usuario = $_POST['usuario'];
+    
+        echo $sql = "UPDATE `venda` SET `id_produto` = $produto, `id_usuario` = $usuario WHERE id_venda = $id";
+        $atualizar = mysqli_query($conexao,$sql);
+    
+        $_SESSION['msg'] = "<div class='alert alert-success'>Produto atualizado com sucesso!</div>";
+        header('Location:listar_vendas.php');
+    }
+    
     // Atualizar usuário
     if (isset($_POST['updateuser'])) {
         $id = $_POST['id'];

@@ -36,6 +36,19 @@ $(document).ready(function(){
         return false;
     })
 })
+// modal de confirmação de exclusao da venda
+$(document).ready(function(){
+    $('a[data-confirm-vend]').click(function(ev){
+        var href = $(this).attr('href');
+        if (!$('#confirm-delete').length) {
+            $('body').append('<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Excluír Venda</h5><button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button></div><div class="modal-body">Deseja excluir a venda?</div><div class="modal-footer"><button type="button" class="btn btn-success" data-dismiss="modal">Não</button><a class="btn btn-danger" id="dataConfirmOK">Sim</a></div></div></div></div>');
+        };
+
+        $('#dataConfirmOK').attr('href',href);
+        $('#confirm-delete').modal({show:true});
+        return false;
+    })
+})
 
 $(document).ready(function(){
     $('a[data-confirm-user]').click(function(ev){

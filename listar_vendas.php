@@ -2,7 +2,7 @@
     include 'header.php';
 ?>
 <div class="container" style="margin-top: 40px;">
-    <h4>Lista de Produtos</h4>
+    <h4>Lista de Vendas</h4>
     <?php 
         if (isset($_SESSION['msg'])) {
             echo $_SESSION['msg'];
@@ -39,12 +39,12 @@
                     <?php 
                         if (($nivel == 1) || ($nivel == 2)) { 
                     ?>
-                    <a class="btn btn-sm btn-warning" style="color:#fff" href="editar_venda.php?id=<?php echo $id_venda?>"><i class="far fa-edit"></i>&nbsp;Editar</a>
+                    <a class="btn btn-sm btn-warning" style="color:#fff" href="editar_venda.php?id=<?php echo $venda?>"><i class="far fa-edit"></i>&nbsp;Editar</a>
                     <?php } ?>
                     <?php 
                         if ($nivel == 1) { 
                     ?>
-                    <a class="btn btn-sm btn-danger" style="color:#fff" data-confirm-prod="Deseja excluir o produto?" href="_excluir.php?delprod=<?php echo $id_venda?>"><i class="far fa-trash-alt"></i>&nbsp;Excluir</a>
+                    <a class="btn btn-sm btn-danger" style="color:#fff" data-confirm-vend="Deseja excluir a venda?" href="_excluir.php?delvend=<?php echo $venda?>"><i class="far fa-trash-alt"></i>&nbsp;Excluir</a>
                     <?php } ?>
                 </td>
         </tr>
