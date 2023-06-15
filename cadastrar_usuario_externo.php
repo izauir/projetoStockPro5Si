@@ -36,7 +36,7 @@
             <div class="form-group">
                 <label>Repetir Senha</label>
                 <input type="password" class="form-control" placeholder="Repetir senha" required oninput="validaSenha(this)">
-                <small>Precisa ser igual a senha digirada acima</small>
+                <small>Precisa ser igual a senha digitada acima</small>
             </div>
             <div style="text-align: right">
                 <a href="index.php" class="btn btn-sm btn-warning">Voltar</a>
