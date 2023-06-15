@@ -24,6 +24,17 @@
         header('Location:listar_produtos.php');
     }
 
+    // Excluir venda
+    if (isset($_GET['delvend'])) {
+        $id = $_GET['delvend'];
+
+        $sql = "DELETE FROM `venda` WHERE id_venda = $id";
+        $deletar = mysqli_query($conexao,$sql);
+    
+        $_SESSION['msg'] = "<div class='alert alert-success'>Venda excluída com sucesso!</div>";
+        header('Location:listar_vendas.php');
+    }
+
     // Excluir categoria
     if (isset($_GET['delcat'])) {
         $id = $_GET['delcat'];

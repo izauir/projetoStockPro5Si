@@ -31,10 +31,6 @@
                     echo $_SESSION['msg'];
                     unset($_SESSION['msg']);
                 }
-
-              
-
-
             ?>
           <script>(function() {
     console.log(5); 

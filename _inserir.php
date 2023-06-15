@@ -67,6 +67,24 @@
         
     }
 
+    // Inserir venda
+    if (isset($_POST['insertvend'])) {
+        $codigoproduto = $_POST['produto'];
+        $codigoUsuario = $_POST['usuario'];
+
+        if (empty($codigoproduto) || empty($codigoUsuario)) {
+            $_SESSION['msg'] = "<div class='alert alert-warning'>Preencha todos os campos</div>";
+            header('Location:cadastrar_vendas.php');
+        } else {
+            $sql = "INSERT INTO `venda`(`id_produto`, `id_usuario`) VALUES ($codigoproduto, $codigoUsuario)";
+            $inserir = mysqli_query($conexao, $sql);
+
+            $_SESSION['msg'] = "<div class='alert alert-success'>Venda cadastrado com sucesso!</div>";
+            header('Location:cadastrar_vendas.php');
+        }
+        
+    }
+
     // Inserir usuário externo
     if (isset($_POST['insertuserex'])) {
         $nomeusuario = $_POST['nomeusuario'];

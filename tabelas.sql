@@ -21,8 +21,8 @@ CREATE TABLE produtos (
   id_categoria int,
   id_fornecedor int,
   quantidade int NOT NULL,
-  FOREIGN KEY (id_fornecedor) REFERENCES fornecedor(id_fornecedor),
-  FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
+  FOREIGN KEY (id_fornecedor) REFERENCES fornecedor(id_fornecedor) ON DELETE CASCADE,
+  FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria) ON DELETE CASCADE
 );
 
 CREATE TABLE usuarios (
@@ -35,12 +35,12 @@ CREATE TABLE usuarios (
 );
 
 -- referência (N,N)
-create table venda (
- id_venda int NOT NULL AUTO_INCREMENT PRIMARY KEY,
- id_produto int,
- id_usuario int,
- FOREIGN KEY (id_produto) REFERENCES produtos(id_produto),
- FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+CREATE TABLE venda (
+  id_venda int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  id_produto int,
+  id_usuario int,
+  FOREIGN KEY (id_produto) REFERENCES produtos(id_produto) ON DELETE CASCADE,
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
 );
 
 INSERT INTO `usuarios` (`id_usuario`, `nome_usuario`, `email_usuario`, `senha_usuario`, `nivel_usuario`, `status`) VALUES

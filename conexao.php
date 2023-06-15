@@ -1,8 +1,8 @@
 <?php 
     $servername = "localhost";
-    $database = "projetosi";
+    $database = "stockpro";
     $username = "root";
-    $password = "123456";
+    $password = "";
 
     $conexao = mysqli_connect($servername,  $username, $password, $database);
 ?>

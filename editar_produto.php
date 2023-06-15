@@ -14,9 +14,9 @@
                     $id_produto = $array['id_produto'];
                     $nroproduto = $array['nroproduto'];
                     $nomeproduto = $array['nomeproduto'];
-                    $categoria = $array['categoria'];
+                    $categoria = $array['id_categoria'];
                     $quantidade = $array['quantidade'];
-                    $fornecedor = $array['fornecedor'];
+                    $fornecedor = $array['id_fornecedor'];
             ?>
             <div class="form-group">
                 <label>Código Produto</label>
@@ -29,10 +29,22 @@
             </div>
             <div class="form-group">
                 <label>Categoria</label>
-                <select class="form-control" value="<?php echo $categoria?>" name="categoria">
-                  <option>Periférico</option>
-                  <option>Hardware</option>
-                  <option>Software</option>
+                <select class="form-control" name="categoria" required>
+                    <option>Selecione...</option>
+                <?php 
+                    include 'conexao.php';
+                    $sql = "SELECT * FROM `categoria`";
+                    $buscar = mysqli_query($conexao,$sql);
+                    while ($array = mysqli_fetch_array($buscar)) {
+                       $nome_categoria = $array['nome_categoria'];  
+                       $id_categoria = $array['id_categoria'];  
+                ?>
+                    <option 
+                        value="<?php echo$id_categoria ?>"
+                        <?php echo ($id_categoria == $categoria ? 'selected' : '') ?>
+                    >
+                        <?php echo $nome_categoria ?></option>
+                <?php } ?>
                 </select>
             </div>
             <div class="form-group">
@@ -41,10 +53,21 @@
             </div>
             <div class="form-group">
                 <label>Fornecedor</label>
-                <select class="form-control" value="<?php echo $fornecedor?>" name="fornecedor">
-                  <option>Fornecedor A</option>
-                  <option>Fornecedor B</option>
-                  <option>Fornecedor C</option>
+                <select class="form-control" name="fornecedor" required>
+                    <option>Selecione...</option>
+                <?php 
+                    include 'conexao.php';
+                    $sql = "SELECT * FROM `fornecedor`";
+                    $buscar = mysqli_query($conexao,$sql);
+                    while ($array = mysqli_fetch_array($buscar)) {
+                       $nome_fornecedor = $array['nome_fornecedor'];
+                       $id_fornecedor = $array['id_fornecedor'];
+                ?>
+                  <option
+                    value="<?php echo $id_fornecedor ?>"
+                    <?php echo ($fornecedor == $id_fornecedor ? 'selected': '') ?>
+                ><?php echo $nome_fornecedor ?></option>
+                <?php } ?>
                 </select>
             </div>
             <div style="text-align: right">
