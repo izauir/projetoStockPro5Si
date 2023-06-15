@@ -22,8 +22,12 @@
         </thead>
         <tr>
             <?php 
+            // left join entre tabela categoria e fornecedor.
                 include 'conexao.php';
-                $sql = "SELECT p.id_produto, p.nroproduto, p.nomeproduto, c.nome_categoria, p.quantidade, p.fornecedor from produtos p left join categoria c on p.id_categoria = c.id_categoria";
+                $sql = "SELECT p.id_produto, p.nroproduto, p.nomeproduto, c.nome_categoria, p.quantidade, f.nome_fornecedor 
+                        from produtos p 
+                        left join categoria c on c.id_categoria = p.id_categoria
+                        left join fornecedor f on f.id_fornecedor = p.id_fornecedor";
                 $buscar = mysqli_query($conexao,$sql);
 
                 while ($array = mysqli_fetch_array($buscar)) {
@@ -32,7 +36,7 @@
                     $nomeproduto = $array['nomeproduto'];
                     $categoria = $array['nome_categoria'];
                     $quantidade = $array['quantidade'];
-                    $fornecedor = $array['fornecedor'];
+                    $fornecedor = $array['nome_fornecedor'];
                 
             ?>
                 <td><?php echo $nroproduto ?></td>

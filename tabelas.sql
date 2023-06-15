@@ -1,6 +1,6 @@
-drop database projetosi;
-create database projetosi;
-use projetosi;
+DROP DATABASE projetosi;
+CREATE DATABASE projetosi;
+USE projetosi;
 
 CREATE TABLE fornecedor (
   id_fornecedor int NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -13,13 +13,15 @@ CREATE TABLE categoria (
   nome_categoria varchar(200) NOT NULL
 );
 
+-- referência (1,1)
 CREATE TABLE produtos (
   id_produto int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   nroproduto int NOT NULL,
   nomeproduto varchar(200) NOT NULL,
   id_categoria int,
+  id_fornecedor int,
   quantidade int NOT NULL,
-  fornecedor varchar(200) NOT NULL,
+  FOREIGN KEY (id_fornecedor) REFERENCES fornecedor(id_fornecedor),
   FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
 );
 

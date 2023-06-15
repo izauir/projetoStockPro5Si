@@ -30,7 +30,7 @@
                        $nome_categoria = $array['nome_categoria'];  
                        $id_categoria = $array['id_categoria'];  
                 ?>
-                  <option value="<?php echo$id_categoria ?>" ><?php echo $nome_categoria ?></option>
+                  <option value="<?php echo$id_categoria ?>"> <?php echo $nome_categoria ?></option>
                 <?php } ?>
                 </select>
             </div>
@@ -49,8 +49,9 @@
                     $buscar = mysqli_query($conexao,$sql);
                     while ($array = mysqli_fetch_array($buscar)) {
                        $nome_fornecedor = $array['nome_fornecedor'];  
+                       $id_fornecedor = $array['id_fornecedor'];  
                 ?>
-                  <option><?php echo $nome_fornecedor ?></option>
+                  <option value="<?php echo$id_fornecedor?>"> <?php echo $nome_fornecedor ?></option>
                 <?php } ?>
                 </select>
             </div>
