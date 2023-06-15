@@ -23,14 +23,14 @@
         <tr>
             <?php 
                 include 'conexao.php';
-                $sql = "SELECT * FROM `produtos`";
+                $sql = "SELECT p.id_produto, p.nroproduto, p.nomeproduto, c.nome_categoria, p.quantidade, p.fornecedor from produtos p left join categoria c on p.id_categoria = c.id_categoria";
                 $buscar = mysqli_query($conexao,$sql);
 
                 while ($array = mysqli_fetch_array($buscar)) {
                     $id_produto = $array['id_produto'];
                     $nroproduto = $array['nroproduto'];
                     $nomeproduto = $array['nomeproduto'];
-                    $categoria = $array['categoria'];
+                    $categoria = $array['nome_categoria'];
                     $quantidade = $array['quantidade'];
                     $fornecedor = $array['fornecedor'];
                 

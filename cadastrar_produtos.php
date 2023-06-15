@@ -28,8 +28,9 @@
                     $buscar = mysqli_query($conexao,$sql);
                     while ($array = mysqli_fetch_array($buscar)) {
                        $nome_categoria = $array['nome_categoria'];  
+                       $id_categoria = $array['id_categoria'];  
                 ?>
-                  <option><?php echo $nome_categoria ?></option>
+                  <option value="<?php echo$id_categoria ?>" ><?php echo $nome_categoria ?></option>
                 <?php } ?>
                 </select>
             </div>
