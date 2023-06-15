@@ -57,7 +57,7 @@
                 $_SESSION['msg'] = "<div class='alert alert-warning'>Já existe um produto com esse codigo</div>";
                 header('Location:cadastrar_produtos.php');
             }else {
-                $sql = "INSERT INTO `produtos`(`nroproduto`, `nomeproduto`, `id_categoria`, `quantidade`, `fornecedor`) VALUES ($codigoproduto,'$nomeproduto','$categoria',$quantidade,'$fornecedor')";
+                $sql = "INSERT INTO `produtos`(`nroproduto`, `nomeproduto`, `id_categoria`, `quantidade`, `id_fornecedor`) VALUES ($codigoproduto,'$nomeproduto','$categoria',$quantidade,'$fornecedor')";
                 $inserir = mysqli_query($conexao, $sql); 
     
                 $_SESSION['msg'] = "<div class='alert alert-success'>Produto cadastrado com sucesso!</div>";

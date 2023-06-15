@@ -77,18 +77,6 @@
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        USUÁRIO
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="cadastrar_usuario.php">Cadastrar Usuário</a>
-                            <a class="dropdown-item" href="listar_usuarios.php">Listar Usuários</a>                    
-                            <a class="dropdown-item" href="aprovar_usuario.php">Aprovar Usuários</a>                    
-                        </div>
-                    </li>
-                    <?php }?>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         VENDAS
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -101,6 +89,18 @@
                             <a class="dropdown-item" href="listar_categoria.php">Listar Vendas</a>                    
                         </div>
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        USUÁRIO
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="cadastrar_usuario.php">Cadastrar Usuário</a>
+                            <a class="dropdown-item" href="listar_usuarios.php">Listar Usuários</a>                    
+                            <a class="dropdown-item" href="aprovar_usuario.php">Aprovar Usuários</a>                    
+                        </div>
+                    </li>
+                    <?php }?>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
